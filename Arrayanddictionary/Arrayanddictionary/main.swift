@@ -49,7 +49,7 @@ country = country + ["Pak", "Russia", "UK"]
 
 
 
-if var c = country
+if let c = country
 {
     country.append("India")
     country.append("Canada")
@@ -115,4 +115,113 @@ func printthereversearray(arr: [String], index: Int)
 
 printthereversearray(arr: country, index: country.count - 1)
 
-//printthereversearray(arr: country, index: country.count - 1)
+//printthereversearray(arr: country.removeAll(), index: country.count - 1)
+
+var countryDictionary = ["key" : "value" ,
+                         "Ind" : "India",
+                         "Cad" : "Canada",
+                         "Usa" : "United States of America"
+                        ]
+
+print(countryDictionary)
+
+print(countryDictionary["Usa"] ?? "key not exist")
+print(countryDictionary["Usa"]!)
+
+print(countryDictionary["Pak"] ?? "key not exist")
+
+if let c = countryDictionary["Pak"]
+{
+    print(c)
+}
+
+for c in countryDictionary
+{
+    print(c)
+    print(c.key, c.value)
+}
+
+countryDictionary["Pak"] = "Pakistan"
+countryDictionary["Pak00"] = nil
+
+print(countryDictionary)
+
+for (k,v) in countryDictionary
+{
+    print(k,v)
+}
+
+var newC = Dictionary<String, Int>()
+
+var newArray : Array<Int>
+
+//declaring and suing Set collection
+
+var mySet = Set<String>()
+
+mySet.insert("India")
+mySet.insert("Canada")
+mySet.insert("Usa")
+
+mySet.insert("India")
+
+print(mySet)
+mySet.insert("Russia")
+print(mySet)
+
+var mySet2 = Set<String>()
+
+mySet2.insert("India")
+mySet2.insert("Pakistan")
+mySet2.insert("Nepal")
+
+let interSet = mySet.intersection(mySet2)
+print(interSet)
+
+let unionSet = mySet.union(mySet2)
+print(unionSet)
+
+let isDisjoinSet = mySet.isDisjoint(with: mySet2)
+print(isDisjoinSet)
+
+let minusSet = mySet.subtracting(mySet2)
+print(minusSet)
+
+let symDiffSet = mySet.symmetricDifference(mySet2)
+print(symDiffSet)
+
+//let ss = [0: 100, 1: 200, 5:500]
+//print(ss)
+
+ var ss = Dictionary<String, Any>()
+
+ss["int"] = 100
+ss["string"] = "Hello World"
+ss["dict"] = ["k": "v", "ko": 100]
+ss["tuple"] = (100,200)
+
+for item in ss
+{
+    if item.value is Int
+    {
+        print("I am Integer : \(item)")
+    }
+    
+    if item.value is String
+    {
+        print("I am string : \(item)")
+    }
+    
+    if item.value is Dictionary<String, Any>
+    {
+        print("I am dictionary : \(item)")
+    }
+    
+    if item.value is (Int, Int)
+    {
+        print("I am tuple : \(item)")
+    }
+    
+}
+
+//print(ss)
